@@ -1,4 +1,9 @@
-const fun = require('./script')
+function Random(){
+    var numA = Math.floor(Math.random()*6+1)  
+    var numB = Math.floor(Math.random()*6+1)
+    var Num = (numB+numA)
+    return Num
+}
 
 const blocks = ['go', 'brown1', 'luck1', 'brown2', 'pay200', 'train1', 'cyan1', 'suprise1', 'cyan2', 'cyan3', 
 'prison', 'pink1', 'factory1', 'pink2', 'pink3', 'train2', 'orange1', 'luck2', 'orange2', 'orange3', 
@@ -61,76 +66,48 @@ var p2 = 0
 
 function move(player) {
     if (player == 1) {
-        p1 += fun.Random()
+        p1 += Random()
         p1 %= 40
-        const bolean = check(bought1[blocks[p1]], 1)
-        if(bolean){
-            console.log('already Bought')
-        } else {
-            buy(bought1[blocks[p1]], 1)
-            console.log(bought1)
-        }
+        console.log(p1, blocks[p1])
+        buy(bought1[blocks[p1]], 1)
     } else {
-        p2 += fun.Random()
+        p2 += Random()
         p2 %= 40
 
-        // const bolean = check(bought2[blocks[p1]], 1)
-        // if(bolean){
-        //     console.log('already Bought')
-        // } else {
-        //     buy(bought2[blocks[p1]], 1)
-        //     console.log(bought2)
-        // }
+        // buy(bought2[blocks[p2]], 2)
     }
     
 }
-
+     
 function buy(p, player) {
+    let bought
     let place
-    let bought
+    let Uplace
     if (player == 1) {
         bought = bought1;
-        place = p1
+        place = p2
+        Uplace = p1
     } else if (player == 2){
         bought = bought2;
-        place = p2
-    }
-    if (p == 'train1') {
-        bought[blocks[place]] = true
-    } else if (p == 'train4') {
-        bought[blocks[place]] = true
-    } else if (p == 'train2') {
-        bought[blocks[place]] = true
-    } else if (p == 'train3') {
-        bought[blocks[place]] = true
-    } else if (p != undefined || p != 5) {
-        bought[blocks[place]] ++
-    }
-}
-
-function check(p, player) {
-    let bought
-    if (player == 1) {
-        bought = bought1;
         place = p1
-    } else if (player == 2){
-        bought = bought2;
-        place = p2
+        Uplace = p2
     }
+    console.log(p)
 
-
-    if (p == 'train1') {
-        bought[blocks[place]] = true
-    } else if (p == 'train4') {
-        bought[blocks[place]] = true
-    } else if (p == 'train2') {
-        bought[blocks[place]] = true
-    } else if (p == 'train3') {
-        bought[blocks[place]] = true
+    if (p == 'train1' && p == false) {
+        bought[blocks[Uplace]] = true
+    } else if (p == 'train4' && p == false) {
+        bought[blocks[Uplace]] = true
+    } else if (p == 'train2' && p == false) {
+        bought[blocks[Uplace]] = true
+    } else if (p == 'train3' && p == false) {
+        bought[blocks[Uplace]] = true
     } else if (p != undefined || p != 5) {
-        bought[blocks[place]] ++
+        bought[blocks[Uplace]] ++
+    } else if (p == undefined) {
+        console.log("Can't bought things whhich are not cards")
     } else {
-        return true
+        console.log('Someone already bought it')
     }
 }
 

@@ -2,7 +2,41 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+* {
+  box-sizing: border-box;
+}
 a {
   color: #00B7FF;
+}
+
+table {
+  background-color: lightblue;
+  width: 550px;
+  height: 550px;
+}
+table tr td {
+
+}
+
+.red {
+  background-color: red;
+  margin: 0%;
+  padding: 0%;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+} 
+
+.GoPrison {
+  background-color: #00B7FF;
+}
+
+.parking {
+  background-color: ;
 }
