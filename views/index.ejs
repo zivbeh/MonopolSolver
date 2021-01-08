@@ -12,103 +12,133 @@
 </head>
 <body>
     <center>
-    <header>
-        <h1>Monopoly</h1>
-    </header>
-    <br>
-    <div class="contianer" id="contianer">
-        <table>
+        <header>
+            <h1>Monopoly</h1>
+        </header>
+        <br>
+        <div class="contianer" id="contianer">
+            <table class="board">
+
+                <!-- ['go', 'brown1', 'luck1', 'brown2', 'pay200', 'train1', 'cyan1', 'suprise1', 'cyan2', 'cyan3', 
+                'prison', 'pink1', 'factory1', 'pink2', 'pink3', 'train2', 'orange1', 'luck2', 'orange2', 'orange3', 
+                'parking', 'red1', 'suprise2', 'red2', 'red3', 'train3', 'yellow1', 'yellow2', 'factory2', 'yellow3', 
+                'goToPrison', 'green1', 'green2', 'luck3', 'green3', 'train4', 'suprise3', 'blue1', 'pay100', 'blue2'] -->
+
+
+                <tr>
+                    <td class="parking" id="parking">parking</td>
+                    <td class="red" id="red1">red1</td>
+                    <td class="suprise" id="suprise2">suprise2</td>
+                    <td class="red" id="red2">red2</td>
+                    <td class="red" id="red3">red3</td>
+                    <td class="train" id="train3">train3</td>
+                    <td class="yellow" id="yellow1">yellow1</td>
+                    <td class="yellow" id="yellow2">yellow2</td>
+                    <td class="company" id="factory2">Electicity Company</td>
+                    <td class="yellow" id="yellow3">yellow3</td>
+                    <td class="GoPrison" id="goToPrison">Go To Prison</td>
+                </tr>
+                <tr>
+                    <td class="orange" id="orange3">orange3</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="green" id="green1">green1</td>
+                </tr>
+                <tr>
+                    <td class="orange" id="orange2">orange2</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="green" id="green2">green2</td>
+                </tr>
+                <tr>
+                    <td class="luck" id="luck2">luck</td>
+                    <% for(let i = 0; i < 4; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td><button class="btn danger" onclick=reset()>Reset</button></td>
+                    <% for(let i = 0; i < 4; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="luck" id="luck3">luck3</td>
+                </tr>
+                <tr>
+                    <td class="orange" id="orange1">orange1</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="green" id="green3">green3</td>
+                </tr>
+                <tr>
+                    <td class="train" id="train2">train2</td>
+                    <% for(let i = 0; i < 4; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td><button class="btn" onclick=moveAll()>Move</button></td>
+                    <% for(let i = 0; i < 4; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="train" id="train4">train4</td>
+                </tr>
+                <tr>
+                    <td class="pink" id="pink3">pink3</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="suprise" id="suprise3">suprise</td>
+                </tr>
+                <tr>
+                    <td class="pink" id="pink2">pink2</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="blue" id="blue1">blue1</td>
+                </tr>
+                <tr>
+                    <td class="company" id="factory1">Water Company</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="pay" id="pay100">pay 100</td>
+                </tr>
+                <tr>
+                    <td class="pink" id="pink1">pink1</td>
+                    <% for(let i = 0; i < 9; i++) { %>
+                        <td></td>
+                    <% } %>
+                    <td class="blue" id="blue2">blue2</td>
+                </tr>
+                <tr>
+                    <td class="prison" id="prison">Prison</td>
+                    <td class="cyan" id="cyan3">cyan3</td>
+                    <td class="cyan" id="cyan2">cyan2</td>
+                    <td class="suprise" id="suprise1">suprise1</td>
+                    <td class="cyan" id="cyan1">cyan1</td>
+                    <td class="train" id="train1">train1</td>
+                    <td class="pay" id="pay200">pay200</td>
+                    <td class="brown" id="brown2">brown</td>
+                    <td class="luck" id="luck1">luck1</td>
+                    <td class="brown" id="brown1">brown1</td>
+                    <td class="go" id="go">Go!</td>
+                </tr>
+            </table>
+                        <!-- ['go', 'brown1', 'luck1', 'brown2', 'pay200', 'train1', 'cyan1', 'suprise1', 'cyan2', 'cyan3', 
+                'prison', 'pink1', 'factory1', 'pink2', 'pink3', 'train2', 'orange1', 'luck2', 'orange2', 'orange3', 
+                'parking', 'red1', 'suprise2', 'red2', 'red3', 'train3', 'yellow1', 'yellow2', 'factory2', 'yellow3', 
+                'goToPrison', 'green1', 'green2', 'luck3', 'green3', 'train4', 'suprise3', 'blue1', 'pay100', 'blue2'] -->
+        </div>
+        <table class="details">
             <tr>
-                <td class="parking">parking</td>
-                <td class="red">red1</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">Go To Prison</td>
+                <th>Player 1</th>
+                <th>Player 2</th>
             </tr>
             <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
+                <td>saadasd</td>
+                <td>sdfsdfsd</td>
             </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="orange">orange3</td>
-                <% for(let i = 0; i < 9; i++) { %>
-                    <td></td>
-                <% } %>
-                <td class="green">green1</td>
-            </tr>
-            <tr>
-                <td class="parking">parking</td>
-                <td class="red">red1</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-                <td class="red">red2</td>
-            </tr>
+            
         </table>
-    </div>
+    </center>
 </body>
 </html>

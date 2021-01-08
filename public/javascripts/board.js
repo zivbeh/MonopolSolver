@@ -1,3 +1,9 @@
+
+
+
+
+
+
 function Random(){
     var numA = Math.floor(Math.random()*6+1)  
     var numB = Math.floor(Math.random()*6+1)
@@ -66,53 +72,75 @@ var p2 = 0
 
 function move(player) {
     if (player == 1) {
-        p1 += Random()
-        p1 %= 40
-        console.log(p1, blocks[p1])
-        buy(bought1[blocks[p1]], 1)
+        p1 += Random();
+        p1 %= 40;
+        console.log(p1, blocks[p1]);
+        buy(bought1[blocks[p1]], 1);
+        place(1);
     } else {
-        p2 += Random()
-        p2 %= 40
-
-        // buy(bought2[blocks[p2]], 2)
+        p2 += Random();
+        p2 %= 40;
+        place(2);
+        buy(bought2[blocks[p2]], 2);
     }
-    
 }
      
 function buy(p, player) {
-    let bought
-    let place
-    let Uplace
+    let bought;
+    let place;
+    let Uplace;
     if (player == 1) {
         bought = bought1;
-        place = p2
-        Uplace = p1
+        place = p2;
+        Uplace = p1;
     } else if (player == 2){
         bought = bought2;
-        place = p1
-        Uplace = p2
+        place = p1;
+        Uplace = p2;
     }
-    console.log(p)
 
     if (p == 'train1' && p == false) {
-        bought[blocks[Uplace]] = true
+        bought[blocks[Uplace]] = true;
     } else if (p == 'train4' && p == false) {
-        bought[blocks[Uplace]] = true
+        bought[blocks[Uplace]] = true;
     } else if (p == 'train2' && p == false) {
-        bought[blocks[Uplace]] = true
+        bought[blocks[Uplace]] = true;
     } else if (p == 'train3' && p == false) {
-        bought[blocks[Uplace]] = true
+        bought[blocks[Uplace]] = true;
     } else if (p != undefined || p != 5) {
-        bought[blocks[Uplace]] ++
+        bought[blocks[Uplace]] ++;
     } else if (p == undefined) {
-        console.log("Can't bought things whhich are not cards")
+        console.log("Can't bought things whhich are not cards");
     } else {
-        console.log('Someone already bought it')
+        console.log('Someone already bought it');
     }
 }
 
+function place(player) {
+    if (player == 1) {
+        let place = document.getElementById("player1");
+        console.log(place)
+        if(place == null){
+            console.log('start')
+        } else {
+            place.remove();
+        }
+        const block = document.getElementById(blocks[p1]);
+        block.innerHTML += '<div class="player1" id="player1"></div>';  
+    } else if (player == 2){
+        let place = document.getElementById("player2");
+        console.log(place)
+        if(place == null){
+            console.log('start')
+        } else {
+            place.remove();
+        }
+        const block = document.getElementById(blocks[p2]);
+        block.innerHTML += '<div class="player2" id="player2"></div>';
+    }
+}
 
-for (let i = 0; i < 3; i++) {
+function moveAll() {
     move(1)
     move(2)
 }
