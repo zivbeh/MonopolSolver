@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    
-    <!--<script defer src="/javascripts/board.js"></script> IT IS A NODE FILE NOT A JS ONE, HTML RECIEVES ONLY JS FILES IF YOU WANT TO USE IT HERE YOU CANT USE REQUIRE IN A JS CODE-->
     <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <script defer src="/javascripts/board.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <title>Monopoly</title>
 </head>
 <body>
@@ -15,16 +17,8 @@
         <header>
             <h1>Monopoly</h1>
         </header>
-        <br>
         <div class="contianer" id="contianer">
             <table class="board">
-
-                <!-- ['go', 'brown1', 'luck1', 'brown2', 'pay200', 'train1', 'cyan1', 'suprise1', 'cyan2', 'cyan3', 
-                'prison', 'pink1', 'factory1', 'pink2', 'pink3', 'train2', 'orange1', 'luck2', 'orange2', 'orange3', 
-                'parking', 'red1', 'suprise2', 'red2', 'red3', 'train3', 'yellow1', 'yellow2', 'factory2', 'yellow3', 
-                'goToPrison', 'green1', 'green2', 'luck3', 'green3', 'train4', 'suprise3', 'blue1', 'pay100', 'blue2'] -->
-
-
                 <tr>
                     <td class="parking" id="parking">parking</td>
                     <td class="red" id="red1">red1</td>
@@ -65,9 +59,14 @@
                 </tr>
                 <tr>
                     <td class="orange" id="orange1">orange1</td>
-                    <% for(let i = 0; i < 9; i++) { %>
+                    <% for(let i = 0; i < 4; i++) { %>
                         <td></td>
                     <% } %>
+                    <td><button class="btn" onclick=profitConsole()>Profit</button></td>
+                    <% for(let i = 0; i < 4; i++) { %>
+                        <td></td>
+                    <% } %>
+                    
                     <td class="green" id="green3">green3</td>
                 </tr>
                 <tr>
@@ -123,22 +122,26 @@
                     <td class="go" id="go">Go!</td>
                 </tr>
             </table>
-                        <!-- ['go', 'brown1', 'luck1', 'brown2', 'pay200', 'train1', 'cyan1', 'suprise1', 'cyan2', 'cyan3', 
-                'prison', 'pink1', 'factory1', 'pink2', 'pink3', 'train2', 'orange1', 'luck2', 'orange2', 'orange3', 
-                'parking', 'red1', 'suprise2', 'red2', 'red3', 'train3', 'yellow1', 'yellow2', 'factory2', 'yellow3', 
-                'goToPrison', 'green1', 'green2', 'luck3', 'green3', 'train4', 'suprise3', 'blue1', 'pay100', 'blue2'] -->
         </div>
-        <table class="details">
-            <tr>
-                <th>Player 1</th>
-                <th>Player 2</th>
-            </tr>
-            <tr>
-                <td>saadasd</td>
-                <td>sdfsdfsd</td>
-            </tr>
+        <div class="details">
+            <div class="header">
+                <h2>Player 1</h2>
+                <label id="money1">1500$</label>
+            </div>
+            <div class="header">
+                <h2>Player 2</h2>
+                <label id="money2">1500$</label>
+            </div>
             
-        </table>
+            
+            <div class="player-list" id="list-player1">
+            </div>
+            <div class="player-list" id="list-player2">
+            </div>
+        </div>
     </center>
+    <footer>
+        <p>All rights reserved to Ziv Behar and Eden Rosen</p>
+    </footer>
 </body>
 </html>
