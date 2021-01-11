@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +8,82 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <script defer src="/javascripts/board.js"></script>
-    <script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <title>Monopoly</title>
 </head>
 <body>
     <center>
         <header>
-            <h1>Monopoly</h1>
+            <h1>Monopoly</h1> 
         </header>
-        <div class="contianer" id="contianer">
+        <div class="monopolGrid" id="monopolGrid">
+            <div class="firstRow Row">
+                <div class="parking" id="parking">parking</div>
+                <div class="red" id="red1">red1</div>
+                <div class="suprise" id="suprise2">suprise2</div>
+                <div class="red" id="red2">red2</div>
+                <div class="red" id="red3">red3</div>
+                <div class="train" id="train3">train3</div>
+                <div class="yellow" id="yellow1">yellow1</div>
+                <div class="yellow" id="yellow2">yellow2</div>
+                <div class="company" id="factory2">Electicity Company</div>
+                <div class="yellow" id="yellow3">yellow3</div>
+                <div class="GoPrison" id="goToPrison">Go To Prison</div>
+            </div>
+            <div class="midleRow height">
+                <div class="orange" id="orange3">orange3</div>
+                <div class="green" id="green1">green1</div>
+            </div>
+            <div class="midleRow height">
+                <div class="orange" id="orange2">orange2</div>
+                <div class="green" id="green2">green2</div>
+            </div>
+            <div class="midleRowBtn height">
+                <div class="luck" id="luck2">luck</div>
+                <div><button class="btn danger" onclick=reset()>Reset</button></div>
+                <div class="luck" id="luck3">luck</div>
+            </div>
+            <div class="midleRowBtn height">
+                <div class="orange" id="orange1">orange1</div>
+                <div><button class="btn" onclick=profitConsole()>Profit</button></div>
+                <div class="green" id="green3">green3</div>
+            </div>
+            <div class="midleRowBtn height">
+                <div class="train" id="train2">train2</div>
+                <div><button class="btn" onclick=moveAll()>Move</button></div>
+                <div class="train" id="train4">train4</div>
+            </div>
+            <div class="midleRow height">
+                <div class="pink" id="pink3">pink3</div>
+                <div class="suprise" id="suprise3">suprise3</div>
+            </div>
+            <div class="midleRow height">
+                <div class="pink" id="pink2">pink2</div>
+                <div class="blue" id="blue1">blue1</div>
+            </div>
+            <div class="midleRow height">
+                <div class="company" id="factory1">Water Company</div>
+                <div class="pay" id="pay100">pay100</div>
+            </div>
+            <div class="midleRow height">
+                <div class="pink" id="pink1">pink1</div>
+                <div class="blue" id="blue2">blue2</div>
+            </div>
+            <div class="firstRow Row">
+                <div class="prison" id="prison">Prison</div>
+                <div class="cyan" id="cyan3">cyan3</div>
+                <div class="cyan" id="cyan2">cyan2</div>
+                <div class="suprise" id="suprise1">suprise1</div>
+                <div class="cyan" id="cyan1">cyan1</div>
+                <div class="train" id="train1">train1</div>
+                <div class="pay" id="pay200">pay200</div>
+                <div class="brown" id="brown2">brown</div>
+                <div class="luck" id="luck1">luck1</div>
+                <div class="brown" id="brown1">brown1</div>
+                <div class="go" id="go">Go!</div>
+            </div>
+        </div>
+        <!-- <div class="contianer" id="contianer">
             <table class="board">
                 <tr>
                     <td class="parking" id="parking">parking</td>
@@ -41,7 +107,9 @@
                 </tr>
                 <tr>
                     <td class="orange" id="orange2">orange2</td>
-                    <% for(let i = 0; i < 9; i++) { %>
+                    <td></td>
+                    <td><button id="getLuck" class="btn getLuck">Luck</button></td>
+                    <% for(let i = 0; i < 7; i++) { %>
                         <td></td>
                     <% } %>
                     <td class="green" id="green2">green2</td>
@@ -96,9 +164,11 @@
                 </tr>
                 <tr>
                     <td class="company" id="factory1">Water Company</td>
-                    <% for(let i = 0; i < 9; i++) { %>
+                    <% for(let i = 0; i < 7; i++) { %>
                         <td></td>
                     <% } %>
+                    <td><button id="getSuprise" class="btn getSuprise">Suprise</button></td>
+                    <td></td>
                     <td class="pay" id="pay100">pay 100</td>
                 </tr>
                 <tr>
@@ -122,7 +192,7 @@
                     <td class="go" id="go">Go!</td>
                 </tr>
             </table>
-        </div>
+        </div> -->
         <div class="details">
             <div class="header">
                 <h2>Player 1</h2>

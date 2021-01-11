@@ -2,13 +2,13 @@ body {
   font-size: 14px;
   font-family: 'Pirata One', cursive;
 
-  background: linear-gradient(22deg, #ff7a18, #af002d, #319197);
+  background: linear-gradient(22deg, #f5f5f5, #ffffff, #ffffff);
   background-size: 600% 600%;
-
-  -webkit-animation: AnimationName 5s ease infinite;
-  -moz-animation: AnimationName 5s ease infinite;
-  -o-animation: AnimationName 5s ease infinite;
-  animation: AnimationName 5s ease infinite;
+/*
+  -webkit-animation: AnimationName 20s ease infinite;
+  -moz-animation: AnimationName 20s ease infinite;
+  -o-animation: AnimationName 20s ease infinite;
+  animation: AnimationName 20s ease infinite;*/
 }
 @-webkit-keyframes AnimationName {
   0%{background-position:0% 92%}
@@ -38,13 +38,14 @@ a {
 }
 header h1 {
   font-size: 50px;
+  margin-right: auto;
+  margin-left: ;
 }
 .board {
   background-color: lightblue;
   width: 550px;
   height: 550px;
 }
-
 .red {
   background-color: rgb(212, 68, 68);
   margin: 0%;
@@ -147,6 +148,8 @@ header h1 {
   font-size: 20px;
   margin-top: 25px;
   display: grid;
+  margin-left: auto;
+  margin-right: auto;
   align-content: flex-start;
   grid-template-columns: 1fr 1fr;
   width: 370px;
@@ -177,3 +180,44 @@ footer {
   margin: 3px;
 }
 
+.firstRow {
+  display: grid;
+  grid-template-columns: 11% 8.67% 8.67% 8.67% 8.67% 8.67% 8.67% 8.67% 8.67% 8.67% 11%;
+}
+
+.monopolGrid {
+  padding-top: 10px;
+  max-width: 850px;
+  max-height: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Row > div {
+  height: 5vh;
+  font-size: 18px;
+  border: 1px black;
+}
+.height > div {
+  height: 5vh;
+  font-size: 18px;
+  border: 1px black;
+}
+
+.midleRow {
+  display: grid;
+  grid-template-columns: 11% 11%;
+  grid-column-gap: 78%;
+}
+
+.midleRowBtn{
+  display: grid;
+  grid-template-columns: 11% 12% 11%;
+  grid-column-gap: 33%;
+}
+
+@media (max-width: 750px) {
+  .height > div, .Row > div {
+    font-size: 13px;
+  }
+}
